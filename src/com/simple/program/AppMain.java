@@ -14,11 +14,13 @@ public class AppMain {
         Task task4 = new Task("Task 4", 2);
         Task task5 = new Task("Task 5", 3);
 
+
         // Set up dependencies
         task2.addPredescessor(task1);
         task3.addPredescessor(task2);
         task3.addPredescessor(task1);
         task4.addPredescessor(task1);
+        task2.addPredescessor(task1);
 
         // Add all tasks to a list
         List<Task> tasks = Arrays.asList(task1, task2, task3, task4, task5);

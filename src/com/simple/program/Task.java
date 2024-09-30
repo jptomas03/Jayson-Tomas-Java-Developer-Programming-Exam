@@ -1,13 +1,13 @@
 package com.simple.program;
 
 import java.util.Date;
-import java.util.List;
-import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Task {
 		private String taskName;
 		private int duration; // in days
-		private List<Task> predescessor; // tasks this task predescessor
+		private Set<Task> predescessor; // tasks this task predescessor
 		private Date startDate;
 		private Date endDate;
 		
@@ -16,16 +16,16 @@ public class Task {
 		public Task(String taskName, int duration) {
 	        this.taskName = taskName;
 	        this.duration = duration;
-	        this.predescessor = new ArrayList<Task>();
+	        this.predescessor = new HashSet<Task>();
 	    }
 		
 		public void addPredescessor(Task task) {
 	        this.predescessor.add(task);
 	    }
 		
-		public List<Task> getPredescessor(){
+		public Set<Task> getPredescessor(){
 			if(null==predescessor) {
-				predescessor = new ArrayList<Task>();
+				predescessor = new HashSet<Task>();
 			}
 			return predescessor;
 		}
